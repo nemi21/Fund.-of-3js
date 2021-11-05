@@ -19,4 +19,24 @@ function main() {
     const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
     const material = new THREE.MeshBasicMaterial({color: 0x44aa88}) //greenish blue
+
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    
+
+    function render(time) {
+        time *= 0.001; // convert time to seconds
+
+        cube.rotation.x = time;
+        cube.rotation.y = time;
+
+        renderer.render(scene, camera);
+
+        requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
 }
+
+main();
