@@ -12,4 +12,11 @@ function main() {
     camera.position.z = 2;
 
     const scene = new THREE.Scene();
+
+    const boxWidth = 1;
+    const boxHeight = 1;
+    const boxDepth = 1;
+    const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+    const material = new THREE.MeshBasicMaterial({color: 0x44aa88}) //greenish blue
 }
