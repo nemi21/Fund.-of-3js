@@ -62,6 +62,23 @@ function main() {
 
     }
 
+    {
+        const width = 8;
+        const height = 8;
+        const depth = 8;
+        addSolidGeometry(-2, 2, new THREE.BoxGeometry(width, height, depth));
+    }
+
+    {
+        const radius = 7;
+        const segments = 24;
+        addSolidGeometry(-1, 2, new THREE.CircleGeometry(radius, segments));
+    }
+
+    {
+        
+    }
+
     const boxWidth = 1;
     const boxHeight = 1;
     const boxDepth = 1;
