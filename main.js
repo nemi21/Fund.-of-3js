@@ -76,7 +76,31 @@ function main() {
     }
 
     {
-        
+        const radius = 6;
+        const height = 8;
+        const segments = 16;
+        addSolidGeometry(0, 2, new THREE.ConeGeometry(radius, height, segments));
+    }
+
+    {
+        const radiusTop = 4;
+        const radiusBottom = 4;
+        const height = 8;
+        const radialSegments = 12;
+        addSolidGeometry(1, 2, new THREE.CylinderGeometry(radiusTop, radiusBottom, height, radialSegments));
+    }
+
+    {
+        const radius = 7;
+        addSolidGeometry(2, 2, new THREE.DodecahedronGeometry(radius));
+    }
+
+    {
+        const shape = new THREE.Shape();
+        const x = -2.5;
+        const y = -5;
+        shape.moveTo(x + 2.5, y + 2.5);
+        shape.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y);
     }
 
     const boxWidth = 1;
