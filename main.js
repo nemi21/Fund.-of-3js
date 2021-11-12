@@ -42,12 +42,25 @@ function main() {
         makeInstance(geometry, 0xaa8844, 2),  
     ];
 
+    function resizeRendererToDisplaySize(renderer){
+        const canvas = renderer.domElement;
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+        const needResize = canvas.width !== width || canvas.height !== height;
+        if(needResize){
+            renderer.setSize(width, height, false);
+        }
+        return needResize;
+    }
+
     function render(time) {
         time *= 0.001; // convert time to seconds
 
-        const canvas = renderer.domElement;
-        camera.aspect = canvas.clientWidth / canvas.clientHeight;
-        camera.updateProjectionMatrix();
+        if(resizeRendererToDisplaySize(renderer)){
+            const canvas = renderer.domElement;
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+    }
 
         cubes.forEach((cube, ndx) => {
             const speed = 1 + ndx * .1;
