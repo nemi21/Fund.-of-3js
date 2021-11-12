@@ -38,6 +38,30 @@ function main() {
         obj.position.y = y * spread;
     }
 
+    function createMaterial(){
+        const material = new THREE.MeshPhongMaterial({
+            side: THREE.DoubleSide,
+        });
+
+        const hue = Math.random();
+        const saturation = 1;
+        const luminance = .5;
+        material.color.setHSL(hue, saturation, luminance);
+
+        return material;
+    }
+
+    function addSolidGeometry(x, y, geometry){
+        const mesh = new THREE.Mesh(geometry, createMaterial());
+    }
+    
+    function addLineGeometry(x, y, geometry){
+        const material = new THREE.LineBasicMaterial({color: 0000000});
+        const mesh = new THREE.LineSegments(geometry, material);
+        addObject(x, y, mesh);
+
+    }
+
     const boxWidth = 1;
     const boxHeight = 1;
     const boxDepth = 1;
