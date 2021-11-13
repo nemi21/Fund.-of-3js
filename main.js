@@ -129,6 +129,16 @@ function main() {
         }
         addSolidGeometry(0, 1, new THREE.LatheGeometry(points));
     }
+   
+    function klein(v, u, target) {
+        u *= Math.PI;
+        v *= 2 * Math.PI;
+        u = u * 2;
+
+        let x, z;
+
+        
+    }
 
     const boxWidth = 1;
     const boxHeight = 1;
