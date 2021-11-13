@@ -115,6 +115,19 @@ function main() {
             bevelSize : 1,
             bevelSegmentsL: 2,
         };
+
+        addSolidGeometry(-2, 1, new THREE.ExtrudeGeometry(shape, extrudeSettings));
+    }
+    {
+        const radius = 7;
+        addSolidGeometry(-1, 1, new THREE.IcosahedronGeometry(radius));
+    }
+    {
+        const points = [];
+        for(let i = 0; i < 10; ++i){
+            points.push(new THREE.Vector2(Math.sin(i * 0.2) * 3 + 3, (i - 5) * .8));
+        }
+        addSolidGeometry(0, 1, new THREE.LatheGeometry(points));
     }
 
     const boxWidth = 1;
