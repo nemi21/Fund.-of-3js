@@ -137,7 +137,10 @@ function main() {
 
         let x, z;
 
-        
+        if(u < Math.PI){
+            x = 3 * Math.cos(u) * (1 + Math.sin(u)) + ( 2 * (1 - Math.cos(u) / 2)) * Math.cos(u) * Math.cos(v);
+            x = -8 *  Math.sin(u) - 2 * (1 - Math.cos(u) / 2) * Math.sin(u) * Math.cos(v);
+        }        
     }
 
     const boxWidth = 1;
