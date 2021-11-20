@@ -155,6 +155,18 @@ function main() {
 
     }
 
+    {
+        const width = 9;
+        const height = 9;
+        const widthSegments = 2;
+        const heightSegments = 2;
+        addSolidGeometry(-2, 0 , new THREE.PlaneGeometry(width, height, widthSegments, heightSegments));
+    }
+
+    {
+        const verticesofCube = [];
+    }
+
     const boxWidth = 1;
     const boxHeight = 1;
     const boxDepth = 1;
