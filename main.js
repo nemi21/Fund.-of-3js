@@ -183,6 +183,37 @@ function main() {
         addSolidGeometry(-1, 0, new THREE.PolyhedronGeometry(verticesofCube, indicesOfFaces, radius, detail));
     }
 
+    {
+        const innerRadius = 2;
+        const outerRadius = 7;
+        const segments = 18;
+        addSolidGeometry(0, 0, new THREE.RingGeometry(innerRadius, outerRadius, segments));
+    }
+
+    {
+        const shape = new THREE.Shape();
+        const x = -2.5;
+        const y = -5;
+        shape.moveTo(x + 2.5, y + 2.5);
+        shape.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y);
+        shape.bezierCurveTo(x - 3, y, x - 3, y + 3.5, x - 3, y + 3.5);
+        shape.bezierCurveTo(x - 3, y + 5.5, x - 1.5, y + 7.7, x + 2.5, y + 9.5);
+        shape.bezierCurveTo(x + 6, y + 7.7, x + 8, y + 4.5, x + 8, y + 3.5);
+        shape.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y);
+        shape.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5);
+        addSolidGeometry(1, 0, new THREE.ShapeGeometry(shape));
+    }
+
+    {
+        const radius = 7;
+        const widthSegments = 12;
+        const heightSegments = 8;
+        addSolidGeometry(2, 0, new THREE.ShapeGeometry(radius, widthSegments, heightSegments));
+    }
+    {
+        
+    }
+
     const boxWidth = 1;
     const boxHeight = 1;
     const boxDepth = 1;
