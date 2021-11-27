@@ -238,7 +238,9 @@ function main() {
                 bevelSegments: 5,
             });
 
-            
+            const mesh = new THREE.Mesh(geometry, createMaterial());
+            geometry.computeBoundingBox();
+            geometry.boundingBox.getCenter(mesh.position).multiplyScalar(-1);
         }
     }
 
