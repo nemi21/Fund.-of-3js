@@ -259,6 +259,12 @@ function main() {
     }
 
     {
+        const radius = 3.5;
+        const tube = 1.5;
+        const radialSegments = 8;
+        const tublarSegments = 64;
+        const p = 2;
+        const q = 3;
         
     }
 
