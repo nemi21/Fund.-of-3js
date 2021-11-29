@@ -247,6 +247,19 @@ function main() {
 
             addObject(-1, -1, parent);
         }
+        doit();
+    }
+
+    {
+        const radius = 5;
+        const tubeRadius = 2;
+        const radialSegments = 8;
+        const tublarSegments = 24;
+        addSolidGeometry(0, -1, new THREE. TorusGeometry(radius, tubeRadius, radialSegments, tublarSegments));
+    }
+
+    {
+        
     }
 
     const boxWidth = 1;
