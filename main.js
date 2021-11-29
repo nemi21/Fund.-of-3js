@@ -241,6 +241,11 @@ function main() {
             const mesh = new THREE.Mesh(geometry, createMaterial());
             geometry.computeBoundingBox();
             geometry.boundingBox.getCenter(mesh.position).multiplyScalar(-1);
+
+            const parent = new THREE.Object3D();
+            parent.add(mesh);
+
+            addObject(-1, -1, parent);
         }
     }
 
