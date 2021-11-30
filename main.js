@@ -265,6 +265,25 @@ function main() {
         const tublarSegments = 64;
         const p = 2;
         const q = 3;
+        addSolidGeometry(1, -1, new THREE.TorusKnotGeometry(radius, tube, tublarSegments, radialSegments, p, q));
+    }
+
+    {
+        class CustomSinCurve extends THREE.Curve {
+            constructor(scale) {
+                super();
+                this.scale = scale;
+            }
+            getPoint(t) {
+                const tx = t * 3 - 1.5;
+                const ty = Math.sin(2 * Math.PI * t);
+                const tz = 0;
+                return new THREE.Vector3(tx, ty, tz).multiplyScalar(this.scale);
+            }
+        }
+
+        const path = new CustomSinCurve(4);
+        const tublarSegments = 20;
         
     }
 
