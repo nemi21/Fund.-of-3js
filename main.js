@@ -284,7 +284,20 @@ function main() {
 
         const path = new CustomSinCurve(4);
         const tublarSegments = 20;
-        
+        const radius = 1;
+        const radialSegments = 8;
+        const closed  = false;
+        addSolidGeometry(2, -1, new THREE.TubeGeometry(path, tublarSegments, radius, radialSegments, closed));
+    }
+
+    {
+        const width = 8;
+        const height = 8;
+        const depth = 8;
+        const thresholdAngle = 15;
+        addLineGeometry(-1, -2, new THREE.EdgesGeometry(
+            
+        ))
     }
 
     const boxWidth = 1;
